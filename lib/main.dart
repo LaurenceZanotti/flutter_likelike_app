@@ -11,25 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Hello World',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AppHeader(),
-    );
-  }
-}
-
-class AppHeader extends StatelessWidget {
-  const AppHeader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("ToDo List"),
-        centerTitle: true,
-      ),
+      home: Center(child: Text("Salve salve", style: TextStyle(fontSize: 16))),
     );
   }
 }
