@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-          appBar: AppBar(title: const Text("LikeLike")), body: LikeContainer()),
+          appBar: AppBar(title: const Text("LikeLike")),
+          body: const LikeContainer()),
     );
   }
 }
@@ -29,26 +30,40 @@ class LikeContainer extends StatefulWidget {
 }
 
 class _LikeContainerState extends State<LikeContainer> {
+  int _like_counter = 0;
+
+  void _handleLikeOnTap() {
+    setState(() {
+      _like_counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
           const SizedBox(height: 100),
-          const Center(child: Text("Likes: 0")),
+          Center(
+              child: Text(
+            "Likes: $_like_counter",
+            style: TextStyle(
+                fontSize: 32, fontWeight: FontWeight.w900, color: Colors.red),
+          )),
           const SizedBox(height: 100),
           GestureDetector(
-            onTap: () {
-              print("kkjjj clicado");
-            },
+            onTap: () => _handleLikeOnTap(),
             child: Container(
               height: 50,
               padding: const EdgeInsets.all(8.0),
               margin: const EdgeInsets.symmetric(horizontal: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8), color: Colors.amber),
-              child: Center(
-                child: Text("Dê seu like ❤"),
+              child: const Center(
+                child: Text(
+                  "Dê seu like ❤",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           ),
