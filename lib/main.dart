@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hello World',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
       home: Scaffold(
           appBar: AppBar(title: const Text("LikeLike")),
@@ -46,7 +46,7 @@ class _LikeContainerState extends State<LikeContainer> {
           const SizedBox(height: 100),
           Center(
               child: Text(
-            "Likes: $_like_counter",
+            "$_like_counter",
             style: TextStyle(
                 fontSize: 32, fontWeight: FontWeight.w900, color: Colors.red),
           )),
